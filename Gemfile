@@ -51,6 +51,8 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "pry"
+  gem 'shoulda-matchers', '~> 5.0' #add configuration to bottom of rails_helper
+  gem 'orderly'
 end
 
 group :development do
