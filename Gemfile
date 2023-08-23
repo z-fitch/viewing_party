@@ -72,4 +72,6 @@ group :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'faker'
+  gem 'factory_bot_rails'
 end
