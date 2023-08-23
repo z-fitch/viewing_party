@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
 
-  resources :register, only: [:index]
+  resources :register, only: [:new, :create]
 
   resources :users, only: [:show, :new, :create] do 
 
