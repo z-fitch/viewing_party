@@ -1,3 +1,25 @@
+#title {
+  text-align: center;
+}
+
+#nav-bar {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+#nav-bar a {
+  padding: 3px 10px;
+  background-color: #AB92BF;
+  color: white;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+#nav-bar a:hover {
+  background-color: #9a79b5;
+  transition: background-color 0.2s ease-in-out;
+}
+  
 .user-dash-top {
   text-align: center;
   margin-bottom: 40px;
@@ -11,6 +33,7 @@
   color: black;
   text-decoration: none;
 }
+  
 .user-dash-parties-container h4 {
   text-align: center;
   border-bottom: 1px solid black;
