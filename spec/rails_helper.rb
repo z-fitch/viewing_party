@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'simplecov'
 SimpleCov.start
 
@@ -76,7 +78,8 @@ RSpec.configure do |config|
     config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
     config.hook_into :webmock
     config.filter_sensitive_data('DONT_SHARE_MY_TMDB_SECRET_KEY') { ENV['TMDB_API_KEY'] }
-    config.default_cassette_options = { re_record_interval: 7.days }
+    config.filter_sensitive_data('DONT_SHARE_MY_TMDB_SECRET_TOKEN') { ENV['TMDB_ACCESS_TOKEN'] }
+    config.default_cassette_options = { record: :new_episodes }
     config.configure_rspec_metadata!
   end
 end
