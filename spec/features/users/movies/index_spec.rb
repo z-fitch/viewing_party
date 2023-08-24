@@ -8,62 +8,54 @@ RSpec.describe 'User Movies Page', type: :feature do
   end
 
   describe 'Top Rated Movie Results Page' do
-    scenario 'click on the Discover Top Rated Movies button' do
-      VCR.use_cassette('click_on_the_Discover_Top_Rated_Movies_button') do
-        visit user_discover_index_path(@user)
-        click_link 'Discover Top Rated Movies'
+    scenario 'click on the Discover Top Rated Movies button', :vcr do
+      visit user_discover_index_path(@user)
+      click_link 'Discover Top Rated Movies'
 
-        expect(current_path).to eq(user_movies_path(@user))
-        expect(page).to have_css('.movie', count: 20)
-        expect(page).to have_css('.movie-title', count: 20)
-        expect(page).to have_css('.movie-vote-avg', count: 20)
+      expect(current_path).to eq(user_movies_path(@user))
+      expect(page).to have_css('.movie', count: 20)
+      expect(page).to have_css('.movie-title', count: 20)
+      expect(page).to have_css('.movie-vote-avg', count: 20)
 
-        expect(page).to_not have_css('.movie', count: 21)
-        expect(page).to_not have_css('.movie', count: 19)
+      expect(page).to_not have_css('.movie', count: 21)
+      expect(page).to_not have_css('.movie', count: 19)
 
-        expect(page).to have_content('Showing 20 Results')
-      end
+      expect(page).to have_content('Showing 20 Results')
     end
 
-    it 'has a Discover Page button' do
-      VCR.use_cassette('click_on_the_Discover_Top_Rated_Movies_button') do
-        visit user_movies_path(@user)
+    it 'has a Discover Page button', :vcr do
+      visit user_movies_path(@user)
 
-        expect(page).to have_button('Discover Page')
+      expect(page).to have_button('Discover Page')
 
-        click_button 'Discover Page'
+      click_button 'Discover Page'
 
-        expect(current_path).to eq(user_discover_index_path(@user))
-      end
+      expect(current_path).to eq(user_discover_index_path(@user))
     end
   end
 
   describe 'Movies by Search Results Page' do
-    scenario 'search by title' do
-      VCR.use_cassette('search_by_title') do
-        visit user_discover_index_path(@user)
+    scenario 'search by title', :vcr do
+      visit user_discover_index_path(@user)
 
-        fill_in :search, with: 'clueless'
-        click_button 'Search'
+      fill_in :search, with: 'clueless'
+      click_button 'Search'
 
-        expect(current_path).to eq(user_movies_path(@user))
+      expect(current_path).to eq(user_movies_path(@user))
 
-        expect(page).to have_css('.movie', count: 9)
-        expect(page).to have_css('.movie-title', count: 9)
-        expect(page).to have_css('.movie-vote-avg', count: 9)
-        expect(page).to have_content('Showing 9 Results')
-      end
+      expect(page).to have_css('.movie', count: 9)
+      expect(page).to have_css('.movie-title', count: 9)
+      expect(page).to have_css('.movie-vote-avg', count: 9)
+      expect(page).to have_content('Showing 9 Results')
     end
   end
 
-  describe 'Movie Titles link to Details' do
+  describe 'Movie Titles link to Details', :vcr do
     scenario 'Movie Titles are links' do
-      VCR.use_cassette('click_on_the_Discover_Top_Rated_Movies_button') do
-        visit user_discover_index_path(@user)
-        click_link 'Discover Top Rated Movies'
+      visit user_discover_index_path(@user)
+      click_link 'Discover Top Rated Movies'
 
-        expect(page).to have_css('a.movie-title', count: 20)
-      end
+      expect(page).to have_css('a.movie-title', count: 20)
     end
   end
 end

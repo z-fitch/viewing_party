@@ -15,7 +15,7 @@ class MoviesService
 
   def conn
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.headers["Authorization"] = ENV["TMDB_ACCESS_TOKEN"]
+      faraday.headers["Authorization"] = Rails.application.credentials.tmdb[:access_token]
     end
   end
 end
