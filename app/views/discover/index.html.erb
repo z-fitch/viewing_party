@@ -1,8 +1,9 @@
-<button id="find-top-rated-movies">
-  <%= link_to "Discover Top Rated Movies", user_movies_path(@user, search: "top+rated") %>
-</button>
-
-<%= form_with url: user_movies_path(@user), method: :get, local: true, id: "search-movies" do |form|  %>
-  <%= form.text_field :search %>
-  <%= form.submit "Search" %>
-<% end %>
+<div class="discover-movies">
+  <button>
+    <%= link_to "Discover Top Rated Movies", user_movies_path(@user, search: "Top Rated"), method: :get %>
+  </button>
+  <%= form_with url: user_movies_path(@user), method: :get, local: true, id: "search-movies" do |form|  %>
+    <%= form.text_field :search %>
+    <%= form.submit "Search", name:nil %>
+  <% end %>
+</div>

@@ -20,16 +20,16 @@
   transition: background-color 0.2s ease-in-out;
 }
   
-.user-dash-top {
+.user-dash-top, #search-movies, .discover-movies, .movie-results-top {
   text-align: center;
   margin-bottom: 40px;
 }
 
-.user-dash-top button {
+.user-dash-top button, .discover-movies button {
  margin: 20px 0px;
 }
 
-.user-dash-top a {
+.user-dash-top a, .discover-movies a {
   color: black;
   text-decoration: none;
 }
@@ -41,3 +41,15 @@
   margin: auto;
   padding-bottom: 15px;
 }
+
+.movies-container {
+  width: 40%;
+  margin: auto;
+}
+
+.movie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
