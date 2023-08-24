@@ -1,0 +1,10 @@
+
+<%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+
+<p>Showing <%= @facade.movies.count %> Results</p>
+<% @facade.movies.each do |movie| %>
+  <div class="movie">
+    <%= link_to movie.title, user_movie_path(@user, movie.id), method: :get, class:"movie-title" %> 
+    <div class="movie-vote-avg">Vote Average: <%= movie.vote_average %></div>
+  </div> 
+<% end %>

@@ -1,1 +1,8 @@
-<%# This is a starter file %>
+<button id="find-top-rated-movies">
+  <%= link_to "Discover Top Rated Movies", user_movies_path(@user, search: "top+rated") %>
+</button>
+
+<%= form_with url: user_movies_path(@user), method: :get, local: true, id: "search-movies" do |form|  %>
+  <%= form.text_field :search %>
+  <%= form.submit "Search" %>
+<% end %>
