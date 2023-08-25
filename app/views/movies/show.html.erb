@@ -1,1 +1,32 @@
-<%# Starter file for movie details page %>
+<div class="details-buttons">
+  <h2><%= @facade.movie_details.title %></h2>
+  <%= button_to "Create Viewing Party for #{@facade.movie_details.title}", new_user_movie_viewing_party_path(@user, @movie_id)%>
+  <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+</div>
+
+<div id="movie-top-info">
+  <p>Vote: <%= @facade.movie_details.vote_average %></p>
+  <p>Runtime: <%= @facade.movie_details.format_runtime %></p>
+  <p>Genre: 
+    <%= @facade.movie_details.genre_list %>
+  </p> 
+</div>
+
+<div id="movie-overview">
+  <h4>Summary</h4>
+  <p><%= @facade.movie_details.overview %></p>
+</div>
+
+<div id="movie-cast">
+  <h4>Cast</h4>
+  <% @facade.movie_actors.each do |actor| %>
+    <p id="actors"><%= actor.character %> is played by <%= actor.name %></p>
+  <% end %>
+</div>
+
+<div id="movie-reviews">
+  <h4><%= @facade.movie_review_count %> Reviews</h4>
+  <% @facade.movie_reviews.each do |review|%>
+    <p><%= review.content %> Authored by <%= review.author %> </p>
+  <% end %>
+</div>

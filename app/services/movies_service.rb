@@ -8,6 +8,18 @@ class MoviesService
     get_url("/3/movie/top_rated")
   end
 
+  def details(id)
+    get_url("https://api.themoviedb.org/3/movie/#{id}")
+  end
+
+  def reviews(id)
+    get_url("https://api.themoviedb.org/3/movie/#{id}/reviews")
+  end
+
+  def credits(id)
+    get_url("https://api.themoviedb.org/3/movie/#{id}/credits")
+  end
+
   def get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
