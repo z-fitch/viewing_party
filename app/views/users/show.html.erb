@@ -10,7 +10,7 @@
 
   <% @user.viewing_parties.each do |vp| %>
 
-    <div id="viewing-party-card-<%=vp.id%>">
+    <div class="party-card" id="viewing-party-card-<%=vp.id%>">
         <img src="<%= @facade.movie_image %>">
         <h5><%= @facade.movie_details.title %></h5>
 

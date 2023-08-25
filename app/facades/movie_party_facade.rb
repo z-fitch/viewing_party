@@ -1,4 +1,5 @@
 class MoviePartyFacade
+  attr_reader :movie_id, :service
 
   def initialize(id)
     @movie_id = id
@@ -16,6 +17,6 @@ class MoviePartyFacade
   end
   
   def movie_image
-    "https://image.tmdb.org/t/p/w500/#{movie_poster_path}"
+    "https://image.tmdb.org/t/p/w500#{movie_poster_path}"
   end
 end
