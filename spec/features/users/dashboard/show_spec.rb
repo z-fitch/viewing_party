@@ -7,10 +7,22 @@ RSpec.describe 'User Dashboard', type: :feature do
     @user = create(:user)
     @user2 = create(:user)
 
+    @viewing_party = ViewingParty.create!({duration: 142, date: Date.today, start_time: Time.now})
+
+    @viewing_party_2 = ViewingParty.create!({duration: 84, date: Date.today, start_time: Time.now})
+
+    @uvp_1 = UserViewingParty.create!(user_id: @user.id, viewing_party_id: @viewing_party.id)
+    @uvp_2 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @viewing_party.id, host: true)
+
+    @uvp_3 = UserViewingParty.create!(user_id: @user.id, viewing_party_id: @viewing_party_2.id, host: true)
+    @uvp_4 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @viewing_party_2.id)
+
+    @movie = Movie.new({id: 13, title: 'Forrest Gump'})
+
     visit user_path(@user)
   end
 
-  describe 'When I visit (/users/:id)' do
+  describe 'When I visit (/users/:id)', :vcr do
     it 'displays <usernames dashboard>' do
       expect(page).to have_content("#{@user.name}'s Dashboard", count: 1)
       expect(page).to_not have_content("#{@user2.name}'s Dashboard")
@@ -27,6 +39,21 @@ RSpec.describe 'User Dashboard', type: :feature do
     it 'Has a section that lists viewing parties' do
       expect(page).to have_content('Upcoming Viewing Parties')
       expect(page).to have_css('.user-dash-parties-container')
+    end
+
+    it 'shows viewing parties user has been invited to' do
+
+      within("#viewing-party-card-#{@viewing_party.id}") do
+        expect(page).to have_content(@movie.title)
+        expect(page).to have_content(@viewing_party.host)
+        expect(page).to have_content(@viewing_party.date.strftime("%m/%d/%Y"))
+        expect(page).to have_content(@viewing_party.start_time.strftime("%I:%M%p"))
+      end
+    end
+
+    it 'shows a list of users invited to the viewing party' do
+      expect(page).to have_content(@user.name)
+      expect(page).to have_content(@user2.name)
     end
   end
 end
