@@ -1,0 +1,189 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://api.themoviedb.org/3/search/movie?query=clueless",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "Authorization": [
+            "DONT_SHARE_MY_TMDB_SECRET_TOKEN"
+          ],
+          "User-Agent": [
+            "Faraday v2.7.10"
+          ],
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Server": [
+            "openresty"
+          ],
+          "X-Memc": [
+            "HIT"
+          ],
+          "X-Memc-Key": [
+            "32d2d55147faeb208ed56d4435943b64"
+          ],
+          "X-Memc-Age": [
+            "10012"
+          ],
+          "X-Memc-Expires": [
+            "18114"
+          ],
+          "Date": [
+            "Thu, 24 Aug 2023 23:18:57 GMT"
+          ],
+          "Cache-Control": [
+            "public, max-age=21748"
+          ],
+          "Etag": [
+            "W/\"dc460b495577185116fcb7f5919f12c1\""
+          ],
+          "Vary": [
+            "Accept-Encoding",
+            "Origin"
+          ],
+          "X-Cache": [
+            "Hit from cloudfront"
+          ],
+          "Via": [
+            "1.1 22e21b132444d393240d9002b490575e.cloudfront.net (CloudFront)"
+          ],
+          "X-Amz-Cf-Pop": [
+            "DFW57-P2"
+          ],
+          "Alt-Svc": [
+            "h3=\":443\"; ma=86400"
+          ],
+          "X-Amz-Cf-Id": [
+            "gwvf5waUmJosFiTTLfcqinps5a6NMUD37nXifOdpIj-G1YkvYOMXZQ=="
+          ],
+          "Age": [
+            "21"
+          ]
+        },
+        "body": {
+          "encoding": "ASCII-8BIT",
+          "string": "{\"page\":1,\"results\":[{\"adult\":false,\"backdrop_path\":\"/2FonLz0RPxbBriOlZ9mWhYdlqCp.jpg\",\"genre_ids\":[35,10749],\"id\":9603,\"original_language\":\"en\",\"original_title\":\"Clueless\",\"overview\":\"Shallow, rich and socially successful Cher is at the top of her Beverly Hills high school's pecking scale. Seeing herself as a matchmaker, Cher first coaxes two teachers into dating each other. Emboldened by her success, she decides to give hopelessly klutzy new student Tai a makeover. When Tai becomes more popular than she is, Cher realizes that her disapproving ex-stepbrother was right about how misguided she was -- and falls for him.\",\"popularity\":35.065,\"poster_path\":\"/8AwVTcgpTnmeOs4TdTWqcFDXEsA.jpg\",\"release_date\":\"1995-07-19\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":7.278,\"vote_count\":3974},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[],\"id\":556767,\"original_language\":\"en\",\"original_title\":\"Clueless\",\"overview\":\"A remake of the 1995 film.\",\"popularity\":0.6,\"poster_path\":null,\"release_date\":\"\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":0.0,\"vote_count\":0},{\"adult\":false,\"backdrop_path\":\"/oRLTORPsK43SfQvLpaLLghmKdhf.jpg\",\"genre_ids\":[9648,53,18],\"id\":939992,\"original_language\":\"en\",\"original_title\":\"Clueless\",\"overview\":\"A group of friends start playing a board game towards the end of summer. Things start looking deadly though when they start dying off and they have to figure out how they’re being killed and who among them is committing murder.\",\"popularity\":0.6,\"poster_path\":\"/3i2BSjjzotn40nRFGUlsQa7o7P6.jpg\",\"release_date\":\"2021-09-10\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":0.0,\"vote_count\":0},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[],\"id\":982517,\"original_language\":\"fr\",\"original_title\":\"Clueless\",\"overview\":\"\",\"popularity\":0.6,\"poster_path\":null,\"release_date\":\"\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":0.0,\"vote_count\":0},{\"adult\":false,\"backdrop_path\":\"/sQneOlA5YjYBCV5uQpUdsEPc0Gx.jpg\",\"genre_ids\":[35],\"id\":249644,\"original_language\":\"th\",\"original_title\":\"โป๊ะแตก\",\"overview\":\"Directed by popular comedian turns to director, Mum Jokmok, Pohtak is a parody comedy that explores the lives in front and behind the camera of Thais film industry.\",\"popularity\":1.4,\"poster_path\":\"/fICMWBSYzVEaLTehrLXYQsEeTRO.jpg\",\"release_date\":\"2010-06-02\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":4.4,\"vote_count\":5},{\"adult\":false,\"backdrop_path\":\"/fhXdInQH30Sc9pSKGIMLt2rhwsC.jpg\",\"genre_ids\":[18],\"id\":896321,\"original_language\":\"zh\",\"original_title\":\"青春期\",\"overview\":\"\",\"popularity\":0.6,\"poster_path\":\"/uzvRxhV48Xy1ucNuW2EyO3Jrdu7.jpg\",\"release_date\":\"2007-10-08\",\"title\":\"Young and Clueless\",\"video\":false,\"vote_average\":0.0,\"vote_count\":0},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[53,9648],\"id\":556103,\"original_language\":\"cn\",\"original_title\":\"不解之謎\",\"overview\":\"In two separate but related episodes, Hong Kong Police Inspectors Tang Yat-see and Kim try to deal with baffling crimes but end up \\\"clueless,\\\" until Yat-see's girlfriend Helen introduces the idea that legends and supernatural forces may be involved.\",\"popularity\":0.6,\"poster_path\":\"/dctUJe59GTQdUym1IT3HbOTsuqW.jpg\",\"release_date\":\"2001-03-22\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":10.0,\"vote_count\":1},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[99],\"id\":253301,\"original_language\":\"en\",\"original_title\":\"Beyond Clueless\",\"overview\":\"Narrated by cult teen star Fairuza Balk, Beyond Clueless is a dizzying journey into the mind, body and soul of the teen movie, as seen through the eyes of over 200 modern coming-of-age classics\",\"popularity\":1.607,\"poster_path\":\"/muiieOjHGvl09ygBKhsuxQjMDyw.jpg\",\"release_date\":\"2014-03-10\",\"title\":\"Beyond Clueless\",\"video\":false,\"vote_average\":6.534,\"vote_count\":29},{\"adult\":false,\"backdrop_path\":\"/8ktn3baJBZQTuyXnJUTk4CA0hP.jpg\",\"genre_ids\":[18],\"id\":154582,\"original_language\":\"de\",\"original_title\":\"Die Artisten in der Zirkuskuppel: Ratlos\",\"overview\":\"A young circus director ends up going into television after her father, a trapeze performer, dies in a circus accident.\",\"popularity\":1.777,\"poster_path\":\"/ivc4CPvcEU4NIYwaijGIBjjNQOK.jpg\",\"release_date\":\"1968-08-29\",\"title\":\"Artists Under the Big Top: Perplexed\",\"video\":false,\"vote_average\":6.0,\"vote_count\":17}],\"total_pages\":1,\"total_results\":9}"
+        }
+      },
+      "recorded_at": "Thu, 24 Aug 2023 23:19:18 GMT"
+    },
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://api.themoviedb.org/3/search/movie?query=clueless",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "Authorization": [
+            "DONT_SHARE_MY_TMDB_SECRET_TOKEN"
+          ],
+          "User-Agent": [
+            "Faraday v2.7.10"
+          ],
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Server": [
+            "openresty"
+          ],
+          "X-Memc": [
+            "HIT"
+          ],
+          "X-Memc-Key": [
+            "32d2d55147faeb208ed56d4435943b64"
+          ],
+          "X-Memc-Age": [
+            "10012"
+          ],
+          "X-Memc-Expires": [
+            "18114"
+          ],
+          "Date": [
+            "Thu, 24 Aug 2023 23:18:57 GMT"
+          ],
+          "Cache-Control": [
+            "public, max-age=21748"
+          ],
+          "Etag": [
+            "W/\"dc460b495577185116fcb7f5919f12c1\""
+          ],
+          "Vary": [
+            "Accept-Encoding",
+            "Origin"
+          ],
+          "X-Cache": [
+            "Hit from cloudfront"
+          ],
+          "Via": [
+            "1.1 51c49bddeb40b2d8ef4e452891b72e60.cloudfront.net (CloudFront)"
+          ],
+          "X-Amz-Cf-Pop": [
+            "DFW57-P2"
+          ],
+          "Alt-Svc": [
+            "h3=\":443\"; ma=86400"
+          ],
+          "X-Amz-Cf-Id": [
+            "yP7sCCBOZYrNOhKw7Dt2v1IAW5p3OyY2szDeRRewH_lLL6ChYBoRkA=="
+          ],
+          "Age": [
+            "21"
+          ]
+        },
+        "body": {
+          "encoding": "ASCII-8BIT",
+          "string": "{\"page\":1,\"results\":[{\"adult\":false,\"backdrop_path\":\"/2FonLz0RPxbBriOlZ9mWhYdlqCp.jpg\",\"genre_ids\":[35,10749],\"id\":9603,\"original_language\":\"en\",\"original_title\":\"Clueless\",\"overview\":\"Shallow, rich and socially successful Cher is at the top of her Beverly Hills high school's pecking scale. Seeing herself as a matchmaker, Cher first coaxes two teachers into dating each other. Emboldened by her success, she decides to give hopelessly klutzy new student Tai a makeover. When Tai becomes more popular than she is, Cher realizes that her disapproving ex-stepbrother was right about how misguided she was -- and falls for him.\",\"popularity\":35.065,\"poster_path\":\"/8AwVTcgpTnmeOs4TdTWqcFDXEsA.jpg\",\"release_date\":\"1995-07-19\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":7.278,\"vote_count\":3974},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[],\"id\":556767,\"original_language\":\"en\",\"original_title\":\"Clueless\",\"overview\":\"A remake of the 1995 film.\",\"popularity\":0.6,\"poster_path\":null,\"release_date\":\"\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":0.0,\"vote_count\":0},{\"adult\":false,\"backdrop_path\":\"/oRLTORPsK43SfQvLpaLLghmKdhf.jpg\",\"genre_ids\":[9648,53,18],\"id\":939992,\"original_language\":\"en\",\"original_title\":\"Clueless\",\"overview\":\"A group of friends start playing a board game towards the end of summer. Things start looking deadly though when they start dying off and they have to figure out how they’re being killed and who among them is committing murder.\",\"popularity\":0.6,\"poster_path\":\"/3i2BSjjzotn40nRFGUlsQa7o7P6.jpg\",\"release_date\":\"2021-09-10\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":0.0,\"vote_count\":0},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[],\"id\":982517,\"original_language\":\"fr\",\"original_title\":\"Clueless\",\"overview\":\"\",\"popularity\":0.6,\"poster_path\":null,\"release_date\":\"\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":0.0,\"vote_count\":0},{\"adult\":false,\"backdrop_path\":\"/sQneOlA5YjYBCV5uQpUdsEPc0Gx.jpg\",\"genre_ids\":[35],\"id\":249644,\"original_language\":\"th\",\"original_title\":\"โป๊ะแตก\",\"overview\":\"Directed by popular comedian turns to director, Mum Jokmok, Pohtak is a parody comedy that explores the lives in front and behind the camera of Thais film industry.\",\"popularity\":1.4,\"poster_path\":\"/fICMWBSYzVEaLTehrLXYQsEeTRO.jpg\",\"release_date\":\"2010-06-02\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":4.4,\"vote_count\":5},{\"adult\":false,\"backdrop_path\":\"/fhXdInQH30Sc9pSKGIMLt2rhwsC.jpg\",\"genre_ids\":[18],\"id\":896321,\"original_language\":\"zh\",\"original_title\":\"青春期\",\"overview\":\"\",\"popularity\":0.6,\"poster_path\":\"/uzvRxhV48Xy1ucNuW2EyO3Jrdu7.jpg\",\"release_date\":\"2007-10-08\",\"title\":\"Young and Clueless\",\"video\":false,\"vote_average\":0.0,\"vote_count\":0},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[53,9648],\"id\":556103,\"original_language\":\"cn\",\"original_title\":\"不解之謎\",\"overview\":\"In two separate but related episodes, Hong Kong Police Inspectors Tang Yat-see and Kim try to deal with baffling crimes but end up \\\"clueless,\\\" until Yat-see's girlfriend Helen introduces the idea that legends and supernatural forces may be involved.\",\"popularity\":0.6,\"poster_path\":\"/dctUJe59GTQdUym1IT3HbOTsuqW.jpg\",\"release_date\":\"2001-03-22\",\"title\":\"Clueless\",\"video\":false,\"vote_average\":10.0,\"vote_count\":1},{\"adult\":false,\"backdrop_path\":null,\"genre_ids\":[99],\"id\":253301,\"original_language\":\"en\",\"original_title\":\"Beyond Clueless\",\"overview\":\"Narrated by cult teen star Fairuza Balk, Beyond Clueless is a dizzying journey into the mind, body and soul of the teen movie, as seen through the eyes of over 200 modern coming-of-age classics\",\"popularity\":1.607,\"poster_path\":\"/muiieOjHGvl09ygBKhsuxQjMDyw.jpg\",\"release_date\":\"2014-03-10\",\"title\":\"Beyond Clueless\",\"video\":false,\"vote_average\":6.534,\"vote_count\":29},{\"adult\":false,\"backdrop_path\":\"/8ktn3baJBZQTuyXnJUTk4CA0hP.jpg\",\"genre_ids\":[18],\"id\":154582,\"original_language\":\"de\",\"original_title\":\"Die Artisten in der Zirkuskuppel: Ratlos\",\"overview\":\"A young circus director ends up going into television after her father, a trapeze performer, dies in a circus accident.\",\"popularity\":1.777,\"poster_path\":\"/ivc4CPvcEU4NIYwaijGIBjjNQOK.jpg\",\"release_date\":\"1968-08-29\",\"title\":\"Artists Under the Big Top: Perplexed\",\"video\":false,\"vote_average\":6.0,\"vote_count\":17}],\"total_pages\":1,\"total_results\":9}"
+        }
+      },
+      "recorded_at": "Thu, 24 Aug 2023 23:19:18 GMT"
+    }
+  ],
+  "recorded_with": "VCR 6.2.0"
+}
