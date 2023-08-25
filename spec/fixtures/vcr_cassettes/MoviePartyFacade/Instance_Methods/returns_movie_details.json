@@ -1,0 +1,97 @@
+{
+  "http_interactions": [
+    {
+      "request": {
+        "method": "get",
+        "uri": "https://api.themoviedb.org/3/movie/13",
+        "body": {
+          "encoding": "US-ASCII",
+          "string": ""
+        },
+        "headers": {
+          "Authorization": [
+            "DONT_SHARE_MY_TMDB_SECRET_TOKEN"
+          ],
+          "User-Agent": [
+            "Faraday v2.7.10"
+          ],
+          "Accept-Encoding": [
+            "gzip;q=1.0,deflate;q=0.6,identity;q=0.3"
+          ],
+          "Accept": [
+            "*/*"
+          ]
+        }
+      },
+      "response": {
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json;charset=utf-8"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Date": [
+            "Fri, 25 Aug 2023 19:49:45 GMT"
+          ],
+          "Server": [
+            "openresty"
+          ],
+          "Cache-Control": [
+            "public, max-age=27212"
+          ],
+          "X-Memc": [
+            "HIT"
+          ],
+          "X-Memc-Key": [
+            "a37de7cd9865441ee9076501bdc653e3"
+          ],
+          "X-Memc-Age": [
+            "4563"
+          ],
+          "X-Memc-Expires": [
+            "23447"
+          ],
+          "Etag": [
+            "W/\"0a50186f17d1ea9012b13ed27b76dd5e\""
+          ],
+          "Vary": [
+            "Accept-Encoding",
+            "Origin"
+          ],
+          "X-Cache": [
+            "Hit from cloudfront"
+          ],
+          "Via": [
+            "1.1 f0b290c4e2273a7586bc6f080031d9bc.cloudfront.net (CloudFront)"
+          ],
+          "X-Amz-Cf-Pop": [
+            "DEN50-C2"
+          ],
+          "Alt-Svc": [
+            "h3=\":443\"; ma=86400"
+          ],
+          "X-Amz-Cf-Id": [
+            "6tq3KVo6P_cQ7E-bjow_E0aNGW8xvOGL3wKW_A8oTupYL9NFI474hA=="
+          ],
+          "Age": [
+            "11264"
+          ]
+        },
+        "body": {
+          "encoding": "ASCII-8BIT",
+          "string": "{\"adult\":false,\"backdrop_path\":\"/qdIMHd4sEfJSckfVJfKQvisL02a.jpg\",\"belongs_to_collection\":null,\"budget\":55000000,\"genres\":[{\"id\":35,\"name\":\"Comedy\"},{\"id\":18,\"name\":\"Drama\"},{\"id\":10749,\"name\":\"Romance\"}],\"homepage\":\"https://www.paramountmovies.com/movies/forrest-gump\",\"id\":13,\"imdb_id\":\"tt0109830\",\"original_language\":\"en\",\"original_title\":\"Forrest Gump\",\"overview\":\"A man with a low IQ has accomplished great things in his life and been present during significant historic events—in each case, far exceeding what anyone imagined he could do. But despite all he has achieved, his one true love eludes him.\",\"popularity\":89.073,\"poster_path\":\"/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg\",\"production_companies\":[{\"id\":4,\"logo_path\":\"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png\",\"name\":\"Paramount\",\"origin_country\":\"US\"},{\"id\":21920,\"logo_path\":null,\"name\":\"The Steve Tisch Company\",\"origin_country\":\"\"},{\"id\":412,\"logo_path\":null,\"name\":\"Wendy Finerman Productions\",\"origin_country\":\"\"}],\"production_countries\":[{\"iso_3166_1\":\"US\",\"name\":\"United States of America\"}],\"release_date\":\"1994-06-23\",\"revenue\":677387716,\"runtime\":142,\"spoken_languages\":[{\"english_name\":\"English\",\"iso_639_1\":\"en\",\"name\":\"English\"}],\"status\":\"Released\",\"tagline\":\"The world will never be the same once you've seen it through the eyes of Forrest Gump.\",\"title\":\"Forrest Gump\",\"video\":false,\"vote_average\":8.478,\"vote_count\":25211}"
+        }
+      },
+      "recorded_at": "Fri, 25 Aug 2023 22:57:29 GMT"
+    }
+  ],
+  "recorded_with": "VCR 6.2.0"
+}

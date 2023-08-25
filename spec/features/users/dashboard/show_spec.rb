@@ -42,7 +42,6 @@ RSpec.describe 'User Dashboard', type: :feature do
     end
 
     it 'shows viewing parties user has been invited to' do
-
       within("#viewing-party-card-#{@viewing_party.id}") do
         expect(page).to have_content(@movie.title)
         expect(page).to have_content(@viewing_party.host)
