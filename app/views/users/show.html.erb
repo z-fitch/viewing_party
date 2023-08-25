@@ -7,4 +7,32 @@
 
 <div class="user-dash-parties-container">
   <h4>Upcoming Viewing Parties &#127902;&#65039; &#127909; &#129395;</h4>
+
+  <% @user.viewing_parties.each do |vp| %>
+
+    <div id="viewing-party-card-<%=vp.id%>">
+        <img src="<%= @facade.movie_image %>">
+        <h5><%= @facade.movie_details.title %></h5>
+
+      <p>Hosted By: 
+        <% if vp.host == @user.name %>
+          Myself
+        <% else %>
+          <%= vp.host %>
+        <% end %>
+      </p>
+
+      <p>Date: <%= vp.date.strftime("%m/%d/%Y") %></p>
+      <p>Start Time: <%= vp.start_time.strftime("%I:%M%p") %></p>
+      <p> Invited Users:
+        <% vp.users.each do |user| %>
+          <% if user.name == @user.name %>
+            <b><%= user.name %></b>
+          <% else %>
+            <%= user.name %>
+          <% end %>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
 </div>

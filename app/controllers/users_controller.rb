@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @facade = MoviePartyFacade.new(13)
   end
 
   def new
