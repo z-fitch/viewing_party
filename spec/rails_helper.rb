@@ -73,14 +73,14 @@ RSpec.configure do |config|
   end
 
   config.include FactoryBot::Syntax::Methods
-
 end
 
 VCR.configure do |config|
-    config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
-    config.hook_into :webmock
-    config.filter_sensitive_data('DONT_SHARE_MY_TMDB_SECRET_TOKEN') { Rails.application.credentials.tmdb[:access_token] }
-    config.configure_rspec_metadata!
-    config.default_cassette_options = { serialize_with: :json, record: :new_episodes }
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+  config.filter_sensitive_data('DONT_SHARE_MY_TMDB_SECRET_TOKEN') do
+    Rails.application.credentials.tmdb[:access_token]
   end
-
+  config.configure_rspec_metadata!
+  config.default_cassette_options = { serialize_with: :json, record: :new_episodes }
+end
