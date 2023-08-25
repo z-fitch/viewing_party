@@ -4,4 +4,10 @@ class ViewingParty < ApplicationRecord
 
   validates_presence_of :date, :start_time
   validates_numericality_of :duration
+
+  def host
+    users.joins(:user_viewing_parties)
+      .find_by(user_viewing_parties: {host: true})
+      .name
+  end
 end

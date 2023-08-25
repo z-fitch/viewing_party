@@ -9,15 +9,19 @@ class MoviesService
   end
 
   def details(id)
-    get_url("https://api.themoviedb.org/3/movie/#{id}")
+    get_url("/3/movie/#{id}")
   end
 
   def reviews(id)
-    get_url("https://api.themoviedb.org/3/movie/#{id}/reviews")
+    get_url("/3/movie/#{id}/reviews")
   end
 
   def credits(id)
-    get_url("https://api.themoviedb.org/3/movie/#{id}/credits")
+    get_url("/3/movie/#{id}/credits")
+  end
+
+  def poster(id)
+    get_url("/3/movie/#{id}/images")
   end
 
   def get_url(url)
