@@ -4,7 +4,6 @@ require 'rails_helper'
 
 RSpec.describe 'Welcome Page', type: :feature do
   before :each do
-    # Implement Factory Bot here
     @user_1 = User.create!(name: 'Michael', email: 'michaelisvcool@email.com')
     @user_2 = User.create!(name: 'Sara', email: 'sara1234@email.com')
     @user_3 = User.create!(name: 'Elena', email: 'iheartmydogs@email.com')
