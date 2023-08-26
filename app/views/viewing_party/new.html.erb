@@ -1,0 +1,22 @@
+<h1><%= @facade.movie_details.title  %></h1>
+
+<div id="new-viewing-party">
+  <%= form_with model: @viewing_party, url: user_movie_viewing_party_index_path(@user, @movie_id) do |f| %>
+
+    <%= f.label :duration %>
+    <%= f.number_field :duration, value: @facade.movie_details.runtime, min: @facade.movie_details.runtime  %> 
+
+    <%= f.label :date %>
+    <%= f.date_field :date, min: Date.today %>
+
+    <%= f.label :start_time %>
+    <%= f.time_field :start_time %>
+
+    <% @users.each do |user| %>
+      <%= f.label user.name %>
+      <%= f.check_box user.id %>
+    <% end %>
+
+    <%= f.submit %>
+  <% end %>
+</div>
