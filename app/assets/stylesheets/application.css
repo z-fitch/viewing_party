@@ -57,3 +57,10 @@
   width: 100px;
 }
 
+.party-card {
+  display: inline-block;
+  flex-flow: row;
+  border: 1px solid black;
+  margin: 10px;
+}
+

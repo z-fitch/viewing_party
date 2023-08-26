@@ -117,5 +117,21 @@ RSpec.describe MoviesService do
         expect(movie_data[:character]).to be_an(String)
       end
     end
+
+    context '#credits(id)', :vcr do
+      it 'returns movies related to the title searched' do
+        movie_credits = MoviesService.new.poster(13)
+        expect(movie_credits).to be_a(Hash)
+        expect(movie_credits[:posters]).to be_a(Array)
+      end
+
+      it 'has the needed Movie Data' do
+        movie_credits = MoviesService.new.poster(13)
+        movie_data = movie_credits[:posters].first
+
+        expect(movie_data).to have_key(:file_path)
+        expect(movie_data[:file_path]).to be_an(String)
+      end
+    end
   end
 end
