@@ -9,10 +9,10 @@ class ViewingPartyController < ApplicationController
   end
   
   def create
-    viewing = ViewingParty.new(user_params)
-    user = User.find(params[:user_id])
     movie_id = (params[:movie_id])
+    user = User.find(params[:user_id])
     @users = User.all
+    viewing = ViewingParty.new(view_params)
     if viewing.save
       @users.each do |user|
         if params[user.id.to_s] == "1"
@@ -23,13 +23,13 @@ class ViewingPartyController < ApplicationController
       redirect_to user_path(user)
     else 
       flash[:error] = "Viewing Party could not be created"
-      new_user_movie_viewing_party_path(user, movie_id)
+      redirect_to new_user_movie_viewing_party_path(user, movie_id)
     end
   end
 
   private
 
-  def user_params
-    params.permit(:duration, :date, :start_time) 
+  def view_params
+    params.permit(:duration, :date, :start_time, :movie_id) 
   end
 end
