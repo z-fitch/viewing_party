@@ -5,4 +5,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
   validates :email, uniqueness: true
+
+  def movie_party_ids
+    viewing_parties.pluck(:movie_id)
+  end
 end
