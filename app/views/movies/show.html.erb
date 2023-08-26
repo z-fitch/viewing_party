@@ -1,6 +1,6 @@
 <div class="details-buttons">
   <h2><%= @facade.movie_details.title %></h2>
-  <%= button_to "Create Viewing Party for #{@facade.movie_details.title}", new_user_movie_viewing_party_path(@user, @movie_id)%>
+  <%= button_to "Create Viewing Party for #{@facade.movie_details.title}", new_user_movie_viewing_party_path(@user, @movie_id), method: :get%>
   <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 </div>
 

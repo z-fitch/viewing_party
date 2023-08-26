@@ -7,7 +7,7 @@ class ViewingParty < ApplicationRecord
 
   def host
     users.joins(:user_viewing_parties)
-      .find_by(user_viewing_parties: {host: true})
+      .where(user_viewing_parties: {host: true})
       .name
   end
 end
