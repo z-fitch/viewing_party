@@ -7,9 +7,12 @@ RSpec.describe 'User Dashboard', type: :feature do
     @user = create(:user)
     @user2 = create(:user)
 
-    @viewing_party = ViewingParty.create!({duration: 142, date: Date.today, start_time: Time.now})
+    @movie = Movie.new({id: 13, title: 'Forrest Gump'})
+    @movie2 = Movie.new({id: 200, title: 'Star Trek: The Next Generation Collection'})
 
-    @viewing_party_2 = ViewingParty.create!({duration: 84, date: Date.today, start_time: Time.now})
+    @viewing_party = ViewingParty.create!({duration: 142, date: Date.today, start_time: Time.now, movie_id: @movie.id})
+
+    @viewing_party_2 = ViewingParty.create!({duration: 84, date: Date.today, start_time: Time.now, movie_id: @movie2.id})
 
     @uvp_1 = UserViewingParty.create!(user_id: @user.id, viewing_party_id: @viewing_party.id)
     @uvp_2 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @viewing_party.id, host: true)
@@ -17,7 +20,6 @@ RSpec.describe 'User Dashboard', type: :feature do
     @uvp_3 = UserViewingParty.create!(user_id: @user.id, viewing_party_id: @viewing_party_2.id, host: true)
     @uvp_4 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @viewing_party_2.id)
 
-    @movie = Movie.new({id: 13, title: 'Forrest Gump'})
 
     visit user_path(@user)
   end
@@ -42,7 +44,6 @@ RSpec.describe 'User Dashboard', type: :feature do
     end
 
     it 'shows viewing parties user has been invited to' do
-
       within("#viewing-party-card-#{@viewing_party.id}") do
         expect(page).to have_content(@movie.title)
         expect(page).to have_content(@viewing_party.host)

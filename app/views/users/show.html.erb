@@ -10,9 +10,9 @@
 
   <% @user.viewing_parties.each do |vp| %>
 
-    <div id="viewing-party-card-<%=vp.id%>">
-        <img src="<%= @facade.movie_image %>">
-        <h5><%= @facade.movie_details.title %></h5>
+    <div class="party-card" id="viewing-party-card-<%=vp.id%>">
+        <img src="<%= @facade.movie_image(vp.movie_id) %>">
+        <h5><%= @facade.movie_details(vp.movie_id).title %></h5>
 
       <p>Hosted By: 
         <% if vp.host == @user.name %>
