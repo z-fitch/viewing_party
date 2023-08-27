@@ -24,6 +24,7 @@ API Consumption:
 
 <br/>
 <br/>
+
 Code Organization and Refactoring:
 - Separated functionality into new methods in order to uphold the Single Responsiblity Principle within the Facade, Service, and POROs, improving the maintainability and readability.
 - Adhered to the RuboCop style guide for enhanced code quality.
