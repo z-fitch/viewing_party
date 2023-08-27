@@ -17,7 +17,7 @@ Viewing Party is a pair-programmed entertainment project that enables users to e
 
 ### My Achievements
 API Consumption:
-- Developed Facades, services, and POROs to abstract the process of consuming the IMDb API.
+- Developed facades, services, and POROs to abstract the process of consuming the IMDb API.
 - Connected successfully with 6 different API endpoints to retrieve various movie-related data.
 <img width="800" alt="Screenshot 2023-08-27 at 1 58 44 PM" src="https://github.com/westonio/viewing_party/assets/117330008/6a4c6254-cfe0-4263-b10c-066fcde3efd3">
 <img width="600" alt="Screenshot 2023-08-27 at 1 56 59 PM" src="https://github.com/westonio/viewing_party/assets/117330008/15212166-1aeb-4f8f-8ac0-2f36b9d8ca38">
