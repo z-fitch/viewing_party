@@ -1,22 +1,86 @@
 # Viewing Party
 
-This is the base repo for the [Viewing Party Lite project](https://backend.turing.edu/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
+## Project Overview
 
-### About this Project
+Viewing Party is a pair-programmed rails application in which users can explore movie options and create a viewing party event for themselves and other users of the application, leveraging the consumption of the IMDb API.
 
-Viewing Party Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
+---
+### Languages, Frameworks, and Tools used
+- **Building:** Ruby, Rails, HTML, CSS, and some SQL
+- **Testing:** RSpec, Capybara, ShouldaMatchers, Webmock, VCR
+- **Database:** PostgreSQL
+- **Consuming API:** Faraday HTTP client library
 
-## Setup
+### Project Challenges
+- This was my first time consuming an API with so many endpoints, so writing tests for components that interact with external APIs was challenging due to potential changes in the API's response structure or availability. Mocking API responses effectively became crucial.
+- Creating the data model to accurately depict users, viewing parties, and their interconnections posed a challenge, particularly since we had to account for the future integration of movie objects and their roles within the API requests. 
+
+### My Achievements
+API Consumption:
+- Developed Facades, services, and POROs to abstract the process of consuming the IMDb API.
+- Successfully connected with 6 different API endpoints to retrieve various movie-related data.
+
+Code Organization and Refactoring:
+- Organized codebase to improve maintainability and readability.
+- Adhered to the RuboCop style guide for enhanced code quality.
+
+User Authentication and Data Security:
+- Implemented user registration with unique email validation.
+- Utilized Rails encryption to securely store and manage API access keys.
+
+Team Collaboration:
+- Collaborated effectively with my teammate to prioritize goals and user stories.
+- Engaging in pair programming throughout the project allowed me to enhance my communication skills, refine my ability to conduct independent research, and improve my time management skills in order to meet the project deadline.
+
+---
+### Features
+> User Registration:
+> - Users can register by providing their name and a unique email.
+> - After registration, users are directed to their personalized dashboard.
+  
+> Dashboard:
+> - Users can view their dashboard, which displays their name and provides options to discover movies and view their viewing parties.
+> - The dashboard also lists existing users with links to their respective dashboards.
+
+> Discover Movies:
+> - Users can navigate to the Discover Movies page to explore top-rated movies or search for specific movies.
+> - Up to 20 movie results are displayed with details such as title, vote average, and a link to the movie details page.
+
+> Movie Details:
+> - Users can view detailed information about a specific movie, including its title, vote average, runtime, genres, summary description, and cast members.
+> - The movie details page also provides options to create a viewing party or return to the Discover page.
+
+> Viewing Parties:
+> - Users can create viewing parties for movies they want to watch with friends.
+> - When creating a party, users can specify the duration, date, start time, and select friends to invite.
+> - The party details are displayed on the user's dashboard and on the dashboards of invited friends.
+> - Technical Achievements
+
+#### Thoughts on Refactoring and Improvements
+> To improve this project, I would like to:
+> - Refactor the ViewingParty #create controller action to slim it up.
+> - Create more robust testing for creating Viewing Parties
+> - Implement User Authentication via OAuth or bcrypt
+> - Implement the ability for users to add reviews and ratings for movies they watched, via the IMDb API.
+> - Enhancing the overall user experience through further UI/UX improvements.
+
+#### Contributions to this Project also made by:
+- [Zanna Fitch](https://github.com/z-fitch)
+
+Thank you for exploring Viewing Party! This project showcases my ability to consume APIs, organize code, create user interfaces, and collaborate effectively within a team.
+
+
+--- 
+
+
+### Setup
 
 1. Fork and Clone the repo
-2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:create`
+2. Navigate into the repo directory `cd viewing_party`
+3. Install gem packages: `bundle install`
+4. Setup the database: `rails db:{drop,create,migrate,seed}`
 
 
-## Versions
-
+### Versions
 - Ruby 3.2.2
-
 - Rails 7.0.6
-
-Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
