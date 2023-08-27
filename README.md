@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Viewing Party is a pair-programmed rails application in which users can explore movie options and create a viewing party event for themselves and other users of the application, leveraging the consumption of the IMDb API.
+Viewing Party is a pair-programmed entertainment project that enables users to explore movie options and create events to watch a movie with other users, leveraging the IMDb API to populate data for movies, actors, and reviews.
 
 ---
 ### Languages, Frameworks, and Tools used
