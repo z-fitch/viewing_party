@@ -18,7 +18,7 @@ Viewing Party is a pair-programmed rails application in which users can explore 
 ### My Achievements
 API Consumption:
 - Developed Facades, services, and POROs to abstract the process of consuming the IMDb API.
-- Successfully connected with 6 different API endpoints to retrieve various movie-related data.
+- Connected successfully with 6 different API endpoints to retrieve various movie-related data.
 
 Code Organization and Refactoring:
 - Organized codebase to improve maintainability and readability.
