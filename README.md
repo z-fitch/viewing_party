@@ -70,7 +70,7 @@ Team Collaboration:
 > - Enhancing the overall user experience through further UI/UX improvements.
 
 #### Contributions to this Project also made by:
-- [Zanna Fitch](https://github.com/z-fitch)
+- [Weston Schutt](https://github.com/westonio)
 
 Thank you for exploring Viewing Party! This project showcases my ability to consume APIs, organize code, create user interfaces, and collaborate effectively within a team.
 
