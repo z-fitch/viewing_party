@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'Welcome Page', type: :feature do
   before :each do
-    @user_1 = User.create!(name: 'Michael', email: 'michaelisvcool@email.com')
-    @user_2 = User.create!(name: 'Sara', email: 'sara1234@email.com')
-    @user_3 = User.create!(name: 'Elena', email: 'iheartmydogs@email.com')
+    @user_1 = User.create!(name: 'Michael', email: 'michaelisvcool@email.com', password: 'password123', password_confirmation: 'password123')
+    @user_2 = User.create!(name: 'Sara', email: 'sara1234@email.com', password: 'password123', password_confirmation: 'password123')
+    @user_3 = User.create!(name: 'Elena', email: 'iheartmydogs@email.com', password: 'password123', password_confirmation: 'password123')
   end
 
   describe "When visiting the root path '/'" do
@@ -64,6 +64,9 @@ RSpec.describe 'Welcome Page', type: :feature do
       expect(page).to have_content('Register a New User')
       expect(page).to have_field('Name')
       expect(page).to have_field('Email')
+      expect(page).to have_field('Password')
+      expect(page).to have_field('Password Confirmation')
+
       expect(page).to have_button('Create User')
     end
 
@@ -73,6 +76,8 @@ RSpec.describe 'Welcome Page', type: :feature do
 
       fill_in('Name', with: 'Name')
       fill_in('Email', with: 'NameLast@gmail.com')
+      fill_in(:user_password, with: 'test123')
+      fill_in( :user_password_confirmation, with: 'test123')
 
       click_button('Create User')
 
@@ -85,6 +90,8 @@ RSpec.describe 'Welcome Page', type: :feature do
 
       fill_in('Name', with: '')
       fill_in('Email', with: 'NameLast@gmail.com')
+      fill_in(:user_password, with: 'test123')
+      fill_in( :user_password_confirmation, with: 'test123')
 
       click_button('Create User')
 
@@ -98,6 +105,8 @@ RSpec.describe 'Welcome Page', type: :feature do
 
       fill_in('Name', with: 'Name')
       fill_in('Email', with: '')
+      fill_in(:user_password, with: 'test123')
+      fill_in( :user_password_confirmation, with: 'test123')
 
       click_button('Create User')
 
@@ -111,6 +120,8 @@ RSpec.describe 'Welcome Page', type: :feature do
 
       fill_in('Name', with: 'Name')
       fill_in('Email', with: 'FakeEmail@gmail.com')
+      fill_in(:user_password, with: 'test123')
+      fill_in(:user_password_confirmation, with: 'test123')
 
       click_button('Create User')
 
@@ -120,11 +131,42 @@ RSpec.describe 'Welcome Page', type: :feature do
 
       fill_in('Name', with: 'Second Name')
       fill_in('Email', with: 'FakeEmail@gmail.com')
-
+      fill_in(:user_password, with: 'test1234')
+      fill_in(:user_password_confirmation, with: 'test1234')
+    
       click_button('Create User')
 
       expect(current_path).to eq(new_register_path)
       expect(page).to have_content('Email has already been taken')
+    end
+
+    it 'When I fill in the form with not mathcing passwords, I am redirect to the form with an error' do
+      visit root_path
+      click_button('Create A New User')
+
+      fill_in('Name', with: 'Name')
+      fill_in('Email', with: 'FakeEmail@gmail.com')
+      fill_in(:user_password, with: 'test123')
+      fill_in( :user_password_confirmation, with: 'test321')
+
+      click_button('Create User')
+
+      expect(current_path).to eq(new_register_path)
+      expect(page).to have_content("Password confirmation doesn't match Password")
+    end
+
+    it 'When I fill in the form with Valid info with matching passwords i am directed to the user dashboard' do
+      visit root_path
+      click_button('Create A New User')
+
+      fill_in('Name', with: 'User')
+      fill_in('Email', with: 'NameLast@gmail.com')
+      fill_in(:user_password, with: 'test123')
+      fill_in( :user_password_confirmation, with: 'test123')
+
+      click_button('Create User')
+
+      expect(current_path).to_not eq(root_path)
     end
   end
 end
