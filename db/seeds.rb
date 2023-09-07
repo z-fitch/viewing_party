@@ -3,8 +3,8 @@
     User.destroy_all
     ViewingParty.destroy_all
 
-    @user = User.create!(name: "Bob", email: "bob@example.com")
-    @user2 = User.create!(name: "Sarah", email: "Sarah@example.com")
+    @user = User.create!(name: "Bob", email: "bob@example.com", password: "test123", password_confirmation: "test123")
+    @user2 = User.create!(name: "Sarah", email: "Sarah@example.com", password: "test123", password_confirmation: "test123")
 
 
     @viewing_party = ViewingParty.create!({duration: 142, date: Date.today, start_time: Time.now, movie_id: 13})

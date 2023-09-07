@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: 'welcome#index'
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login_user'
 
   resources :register, only: %i[new create], controller: 'users'
 
