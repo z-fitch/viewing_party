@@ -5,6 +5,9 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true
   validates :email, uniqueness: true
+  validates :password, presence: true
+
+  has_secure_password
 
   def movie_party_ids
     viewing_parties.pluck(:movie_id)
