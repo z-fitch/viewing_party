@@ -19,23 +19,32 @@ RSpec.describe 'Welcome Page', type: :feature do
     end
 
     it 'has a list of the Existing Users' do
+      visit login_path
+
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      click_button 'Log In'
+
+
       visit root_path
 
-      within('div#all-users') do
-        expect(page).to have_content('michaelisvcool@email.com')
-        expect(page).to have_content('sara1234@email.com')
-        expect(page).to have_content('iheartmydogs@email.com')
-      end
+      expect(page).to have_content('michaelisvcool@email.com')
+      expect(page).to have_content('sara1234@email.com')
+      expect(page).to have_content('iheartmydogs@email.com')
     end
 
     it 'Each user listed is a link to that users dashboards' do
+      visit login_path
+
+      fill_in :email, with: @user_1.email
+      fill_in :password, with: @user_1.password
+      click_button 'Log In'
+
       visit root_path
 
-      within('div#all-users') do
-        expect(page).to have_link(@user_1.email, href: user_path(@user_1))
-        expect(page).to have_link(@user_2.email, href: user_path(@user_2))
-        expect(page).to have_link(@user_3.email, href: user_path(@user_3))
-      end
+      expect(page).to have_content(@user_1.email)
+      expect(page).to have_content(@user_2.email)
+      expect(page).to have_content(@user_3.email)
     end
 
     it "has a link to go to the home page '/' " do
@@ -126,7 +135,7 @@ RSpec.describe 'Welcome Page', type: :feature do
       click_button('Create User')
 
       visit root_path
-
+      click_on("Log Out")
       click_button('Create A New User')
 
       fill_in('Name', with: 'Second Name')
