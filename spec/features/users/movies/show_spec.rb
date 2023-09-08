@@ -55,7 +55,7 @@ RSpec.describe 'Movie detail page', type: :feature do
     end
 
     it 'has a button to create a viewing party' do
-      expect(page).to have_button("Create Viewing Party for #{@movie_search[:title]}") # TODO: make viewing parties :')
+      expect(page).to have_button("Create Viewing Party for #{@movie_search[:title]}") 
     end
 
     it 'has button to go to the discover page' do

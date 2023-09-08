@@ -20,8 +20,11 @@ RSpec.describe 'User Dashboard', type: :feature do
     @uvp_3 = UserViewingParty.create!(user_id: @user.id, viewing_party_id: @viewing_party_2.id, host: true)
     @uvp_4 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @viewing_party_2.id)
 
+      visit login_path
 
-    visit user_path(@user)
+      fill_in :email, with: @user.email
+      fill_in :password, with: @user.password
+      click_button 'Log In'
   end
 
   describe 'When I visit (/users/:id)', :vcr do
