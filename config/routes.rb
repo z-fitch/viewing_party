@@ -9,9 +9,12 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user'
+  get '/logout', to: 'users#logout'
 
   resources :register, only: %i[new create], controller: 'users'
 
+  get '/dashboard', to: 'users#show'
+  
   resources :users, only: [:show] do
     resources :discover, only: [:index]
 

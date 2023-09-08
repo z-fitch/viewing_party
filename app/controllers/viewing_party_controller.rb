@@ -1,11 +1,16 @@
 class ViewingPartyController < ApplicationController
 
   def new
-    @user = User.find(params[:user_id])
-    @users = User.all
-    @movie_id = (params[:movie_id])
-    @facade = MoviesDetailsFacade.new(@movie_id)
-    @viewing = ViewingParty.new
+    if current_user
+      @user = User.find(params[:user_id])
+      @users = User.all
+      @movie_id = (params[:movie_id])
+      @facade = MoviesDetailsFacade.new(@movie_id)
+      @viewing = ViewingParty.new
+    else 
+      redirect_to root_path
+      flash[:alert] = "Must Be logged in to View Page"
+    end
   end
   
   def create

@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   def show
+    if current_user
     @user = User.find(params[:id])
     @facade = MoviePartyFacade.new
+    else
+    redirect_to root_path
+    flash[:alert] = "Must Be logged in to View Page"
+    end
   end
 
   def new
@@ -34,6 +39,12 @@ class UsersController < ApplicationController
       flash[:error] = "Sorry, your credentials are bad."
       redirect_to login_path
     end
+  end
+
+  def logout
+    session.delete(:user_id)
+    redirect_to root_path
+    flash[:success] = "Logged Out Succesfully"
   end
 
   private
